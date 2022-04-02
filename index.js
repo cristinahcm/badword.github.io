@@ -148,16 +148,32 @@
     function startGame () {
             const randomWord = words[Math.floor(Math.random()*words.length)];
             // esto hace que cuando le das al boton se añade hidden al primer div 
+            console.log(randomWord)
             startContainer.classList.add("hidden");
-            // esto hace que cuando le das al boton se borra el hidden del segundo div y sale la segunda pantalla
-            gameContainer.classList.remove("hidden");
-            //console.log(randomWord)
-            //randomWord.forEach(square, squareIndex => {
-               // const square = document.createElement("div");
-                //square.setAttribute("id", "square-" + squareIndex)
+        gameContainer.classList.remove("hidden");
 
                 
+              
+            
+    function renderBoard(randomWord) {   
+        
+        const wordLength = randomWord.length;
+        for (let i = 0; i < wordLength; i++) {
+            let row = document.createElement("div")
+            row.className = "letter-row"
+            
+            for (let j = 0; j < wordLength; j++) {
+                let box = document.createElement("div")
+                box.className = "letter-box"
+                row.appendChild(box)
             }
+            
+            board.appendChild(row)
+        }
+    }
+    renderBoard(randomWord);
+}
+
 
 
 
