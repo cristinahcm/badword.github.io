@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    background-color: #f2f2f2;
+    background-color: #E9E9E8;
     font-family: forma-djr-text, sans-serif;
 }
 
@@ -34,6 +34,10 @@
     font-weight: 600;
 }
 
+.square-container {
+margin: 40px;
+}
+
 .square-container div {
     display: flex;
     flex-direction: row;
@@ -41,8 +45,8 @@
 }
 
 .square-container .square {
-    width: 62px;
-    height: 62px;
+    width: 50px;
+    height: 50px;
     border: 2px solid black;
     border-radius: 4px;
     box-sizing: border-box;
@@ -56,7 +60,7 @@
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
-margin-top: 80px;
+margin-top: 30px;
 margin-left: 80px;
 }
 
@@ -70,3 +74,4 @@ margin-left: 80px;
 .hidden {
     display: none;
 }
+

@@ -157,16 +157,25 @@
     }
 
     const wordLength = randomWord.length;
+    
 
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i <= 4; i++) {
         const rowElement = document.createElement("div")
         rowElement.className = "row"
         for (let j = 0; j < wordLength; j++) {
             const square = document.createElement("div")
             square.className = "square"
-            rowElement.appendChild(square)
+            rowElement.appendChild(square) 
         }
         squareDisplay.appendChild(rowElement)
     }
 
+    const currentRow = 0;
+    const currentSquare = 0;
+    const square = document.querySelector('.square')
+    square.addEventListener('keydown', e => {
+        console.log(e)
+    });
+    
+   
     
