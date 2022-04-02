@@ -1,12 +1,5 @@
-
 // declaro la variable de las palabras
     const words = [
-        "<3",
-        "100 millones",
-        "120",
-        "200 mph",
-        "25/8",
-        "6 rings",
         "a tu merced",
         "ahora me llama",
         "am",
@@ -138,7 +131,7 @@
         "yonaguni"
     ];
 
-    //cojo el botón y le creo el evento de click 
+    
     const startButton = document.getElementById('start-game-button');
     const startContainer = document.getElementById('start-container');
     const gameContainer = document.getElementById('game-container');
@@ -148,17 +141,16 @@
 
     startButton.addEventListener("click", startGame);
 
-    //si le dan click se crea una palabra random
+    
     function startGame () {
-            // esto hace que cuando le das al boton se añade hidden al primer div 
             startContainer.classList.add("hidden");
             gameContainer.classList.remove("hidden");
         console.log(randomWord)
     }
 
-    const wordLength = randomWord.length;
-    
+    let counter = 0
 
+    const wordLength = randomWord.length;
     for (let i = 0; i <= 4; i++) {
         const rowElement = document.createElement("div")
         rowElement.className = "row"
@@ -170,12 +162,19 @@
         squareDisplay.appendChild(rowElement)
     }
 
-    const currentRow = 0;
-    const currentSquare = 0;
-    const square = document.querySelector('.square')
-    square.addEventListener('keydown', e => {
-        console.log(e)
-    });
+    //letras que se pueden escribir 
+    const lettersPermitted = /[a-z]/;
+     
+    // detecta el teclado 
+     document.addEventListener('keydown', (e) => {
+         console.log('keypress: ' + e.key);
+
+    // comprueba que solo se puedan escribir letras
+        let keypress = lettersPermitted.test(e.key);
+         console.log(keypress);
+     })
+
+    
     
    
     
