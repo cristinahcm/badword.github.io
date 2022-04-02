@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     background-color: #f2f2f2;
+    font-family: forma-djr-text, sans-serif;
 }
 
 .title {
@@ -10,10 +11,14 @@
     justify-content: center;
 }
 
-.button-start {
+.start-game {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+#start-game-button {
+    border: none;
 }
 
 .start {
@@ -26,26 +31,43 @@
     font-weight: 600;
 }
 
-.top {
+.title-container-top {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     margin-top: -190px;
 }
 
+.tile-container .tile {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #3a3a3c;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+
 .background-img-1 {
 position: absolute;
 left: 350px;
+object-fit: contain;
 }
 
 .background-img-2 {
     position: absolute;
     top: 450px;
-    left: 1500px;
+    /*left: 2000px;*/
 }
 
-.bottom {
+.title-container-bot {
     position:absolute;
     bottom: -200px;
-    left: 670px;
+    /*left: 1250px;*/
+}
+
+.hidden {
+    display: none;
 }
