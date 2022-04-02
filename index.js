@@ -1,3 +1,4 @@
+
 // declaro la variable de las palabras
     const words = [
         "<3",
@@ -141,41 +142,31 @@
     const startButton = document.getElementById('start-game-button');
     const startContainer = document.getElementById('start-container');
     const gameContainer = document.getElementById('game-container');
+    const randomWord = words[Math.floor(Math.random()*words.length)];
+    const squareDisplay = document.querySelector('.square-container')
+
 
     startButton.addEventListener("click", startGame);
 
     //si le dan click se crea una palabra random
     function startGame () {
-            const randomWord = words[Math.floor(Math.random()*words.length)];
             // esto hace que cuando le das al boton se añade hidden al primer div 
-            console.log(randomWord)
             startContainer.classList.add("hidden");
-        gameContainer.classList.remove("hidden");
-
-                
-              
-            
-    function renderBoard(randomWord) {   
-        
-        const wordLength = randomWord.length;
-        for (let i = 0; i < wordLength; i++) {
-            let row = document.createElement("div")
-            row.className = "letter-row"
-            
-            for (let j = 0; j < wordLength; j++) {
-                let box = document.createElement("div")
-                box.className = "letter-box"
-                row.appendChild(box)
-            }
-            
-            board.appendChild(row)
-        }
+            gameContainer.classList.remove("hidden");
+        console.log(randomWord)
     }
-    renderBoard(randomWord);
-}
 
+    const wordLength = randomWord.length;
 
-
-
+    for (let i = 0; i <= 3; i++) {
+        const rowElement = document.createElement("div")
+        rowElement.className = "row"
+        for (let j = 0; j < wordLength; j++) {
+            const square = document.createElement("div")
+            square.className = "square"
+            rowElement.appendChild(square)
+        }
+        squareDisplay.appendChild(rowElement)
+    }
 
     
