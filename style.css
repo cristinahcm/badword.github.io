@@ -34,21 +34,23 @@
     font-weight: 600;
 }
 
-.square-container {
-margin: 40px;
-}
-
-.square-container div {
+.background-img-2 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-right: 100px;
+    margin-top: 20px;
 }
 
-.square-container .square {
-    width: 50px;
-    height: 50px;
-    border: 2px solid black;
-    border-radius: 4px;
+.hidden {
+    display: none;
+}
+
+#board-container .square {
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid black;
+    border-radius: 3px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -56,22 +58,64 @@ margin: 40px;
     margin: 2px;
 }
 
-.background-img-1 {
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-margin-top: 30px;
-margin-left: 80px;
-}
 
-.background-img-2 {
+#keyboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.first-row {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2px;
 }
 
-.hidden {
-    display: none;
+.second-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2px;
 }
 
+.third-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2px;
+}
+
+.keyboard-button {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.8em;
+    margin: 1px;
+    border: 1px solid #8D8D8D;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;
+    font-family: forma-djr-text, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}

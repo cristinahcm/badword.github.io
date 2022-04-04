@@ -131,50 +131,47 @@
         "yonaguni"
     ];
 
+    let lettersRemaining = 0;
+    let rowletters = 0;
+    let currentGuess = []
+
+    // creo la canción random
+    const randomWord = words[Math.floor(Math.random() * words.length)];
+    // esto luego hay que ocultarlo para que no le salga al usuario
+    console.log(randomWord)
     
+    // cojo el botón de start y la primera pantalla
     const startButton = document.getElementById('start-game-button');
     const startContainer = document.getElementById('start-container');
-    const gameContainer = document.getElementById('game-container');
-    const randomWord = words[Math.floor(Math.random()*words.length)];
-    const squareDisplay = document.querySelector('.square-container')
 
-
+    // le creo el evento de click al botón de start
     startButton.addEventListener("click", startGame);
 
+
+    // cuando le doy al botón empieza esta función
+    function startGame() {
+        const gameContainer = document.getElementById('game-container');
+        const board = document.getElementById('board-container')
+        const keyboard = document.getElementById('keyboard-container')//al haber dos pantallas diferentes, primero oculto la primera y muestro la segunda con hidden
+        startContainer.classList.add("hidden");
+        gameContainer.classList.remove("hidden");
+     // esta función coge los divs: game, board y keyboard    
+
     
-    function startGame () {
-            startContainer.classList.add("hidden");
-            gameContainer.classList.remove("hidden");
-        console.log(randomWord)
-    }
-
-    let counter = 0
-
+    // creamos la zona de los cuadrados 
+    
     const wordLength = randomWord.length;
     for (let i = 0; i <= 4; i++) {
-        const rowElement = document.createElement("div")
-        rowElement.className = "row"
+        const row = document.createElement("div")
+        row.className = "row"
         for (let j = 0; j < wordLength; j++) {
             const square = document.createElement("div")
             square.className = "square"
-            rowElement.appendChild(square) 
+            row.appendChild(square)
         }
-        squareDisplay.appendChild(rowElement)
+        board.appendChild(row)
     }
-
-    //letras que se pueden escribir 
-    const lettersPermitted = /[a-z]/;
+}
      
-    // detecta el teclado 
-     document.addEventListener('keydown', (e) => {
-         console.log('keypress: ' + e.key);
 
-    // comprueba que solo se puedan escribir letras
-        let keypress = lettersPermitted.test(e.key);
-         console.log(keypress);
-     })
-
-    
-    
-   
-    
+     

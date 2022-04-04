@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,70 @@
     <link rel="stylesheet" href="./style.css">
     <title>badword</title>
 </head>
+
 <body>
-    <div id="start-container"><div class="title">
-        <img src="./assets/badword-title.png" alt="badword">
-    </div>
-    <div class="start-game">
-    <button id="start-game-button">
-        <img src="./assets/play.png" alt="start-button"></a>
-        <div>
-            <h1 class="start">START</h1>
+    <div id="start-container">
+        <div class="title">
+            <img src="./assets/badword-title.png" alt="badword">
         </div>
-        </button>
-    </div>
-</div>
-<div id="game-container" class="hidden">
-    <div class="background-img-1">
-       <img src="./assets/background-bunny.png" alt="background bunny">
+        <div class="start-game">
+            <button id="start-game-button">
+                <img src="./assets/play.png" alt="start-button"></a>
+                <div>
+                    <h1 class="start">START</h1>
+                </div>
+            </button>
         </div>
-        <div class="square-container"></div>
-    <div class="background-img-2">
-        <img src="./assets/background-bunny-2.png" alt="background bunny">
     </div>
-</div>
-    
+    <div id="game-container" class="hidden">
+        <div class="p-container">
+            <p>Guess the Bad Bunny Song</p>
+        </div>
+        <div id="board-container"></div>
+            <div id="keyboard-container">
+                <div class="first-row">
+                    <button class="keyboard-button">q</button>
+                    <button class="keyboard-button">w</button>
+                    <button class="keyboard-button">e</button>
+                    <button class="keyboard-button">r</button>
+                    <button class="keyboard-button">t</button>
+                    <button class="keyboard-button">y</button>
+                    <button class="keyboard-button">u</button>
+                    <button class="keyboard-button">i</button>
+                    <button class="keyboard-button">o</button>
+                    <button class="keyboard-button">p</button>
+                </div>
+                <div class="second-row">
+                    <button class="keyboard-button">a</button>
+                    <button class="keyboard-button">s</button>
+                    <button class="keyboard-button">d</button>
+                    <button class="keyboard-button">f</button>
+                    <button class="keyboard-button">g</button>
+                    <button class="keyboard-button">h</button>
+                    <button class="keyboard-button">j</button>
+                    <button class="keyboard-button">k</button>
+                    <button class="keyboard-button">l</button>
+                    <button class="keyboard-button">⌫</button>
+                </div>
+                <div class="third-row">
+                    <button class="keyboard-button">z</button>
+                    <button class="keyboard-button">x</button>
+                    <button class="keyboard-button">c</button>
+                    <button class="keyboard-button">v</button>
+                    <button class="keyboard-button">b</button>
+                    <button class="keyboard-button">n</button>
+                    <button class="keyboard-button">m</button>
+                    <button class="keyboard-button">↵</button>
+                </div>
+            </div>
+        </div>
+        <div class="background-img-2">
+            <img src="./assets/background-bunny-2.png" alt="background bunny">
+        </div>
+
+    </div>
+
 </body>
 <script src="./index.js"></script>
+
 </html>
