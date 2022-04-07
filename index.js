@@ -131,9 +131,9 @@
         "yonaguni"
     ];
 
-    let lettersRemaining = 0;
-    let rowletters = 0;
-    let currentGuess = []
+    let row = 0;
+    let currentTile = 0;
+    let isGameOver = false
 
     // creo la canción random
     const randomWord = words[Math.floor(Math.random() * words.length)];
@@ -143,7 +143,6 @@
     // cojo el botón de start y la primera pantalla
     const startButton = document.getElementById('start-game-button');
     const startContainer = document.getElementById('start-container');
-
     // le creo el evento de click al botón de start
     startButton.addEventListener("click", startGame);
 
@@ -154,24 +153,79 @@
         const board = document.getElementById('board-container')
         const keyboard = document.getElementById('keyboard-container')//al haber dos pantallas diferentes, primero oculto la primera y muestro la segunda con hidden
         startContainer.classList.add("hidden");
-        gameContainer.classList.remove("hidden");
-     // esta función coge los divs: game, board y keyboard    
+        gameContainer.classList.remove("hidden"); 
 
-    
     // creamos la zona de los cuadrados 
     
     const wordLength = randomWord.length;
-    for (let i = 0; i <= 4; i++) {
+    for (let i = 4; i >= 0; i--) {
         const row = document.createElement("div")
         row.className = "row"
         for (let j = 0; j < wordLength; j++) {
             const square = document.createElement("div")
             square.className = "square"
+            square.id = `square${j}-${i}`
             row.appendChild(square)
         }
-        board.appendChild(row)
+        board.prepend(row)
     }
 }
      
+// expresion regular de lo que se permite escribir
+
+const lettersPermitted = /[a-z]/;
+
+    // detecta el teclado 
+     document.addEventListener('keydown', (e) => {
+         console.log('keypress: ' + e.key);
+
+    // comprueba que solo se puedan escribir letras
+        let keypress = lettersPermitted.test(e.key);
+         console.log(keypress);
+    // si presiono una letra, escribe dentro del cuadrado
+         if (keypress === "Backspace") {
+             firstSquare.innerHTML = " "
+            row--;
+         } else {
+                    const firstSquare = document.getElementById(`square${row}-${currentTile}`)
+                firstSquare.innerHTML = e.key
+                row++; }
+            }
+        )
+
+     // escribir con el teclado de abajo
+     document.getElementById("keyboard-container").addEventListener("click", (e) => {
+        const target = e.target
+        
+        if (!target.classList.contains("keyboard-button")) {
+            return
+        }
+        let key = target.textContent
+    
+        if (key === "⌫") {
+            deleteLetter()
+            return
+        } 
+
+        if (key) {
+            const firstSquare = document.getElementById(`square${row}-${currentTile}`)
+            firstSquare.innerHTML = key
+            row++; 
+        }
+    console.log(key)
+    })
+
+    //delete
+    
+    const deleteLetter = () => {
+    if (currentTile > 0) {
+        currentTile--
+        const tile = document.getElementById('row-' + row + '-tile-' + currentTile)
+        tile--
+    }
+}
+
+//ENTER
+
 
      
