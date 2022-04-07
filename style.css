@@ -58,6 +58,16 @@
     margin: 2px;
 }
 
+#board-container .no-square {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+
 
 #keyboard-container {
     display: flex;
@@ -118,4 +128,28 @@ p {
     font-family: forma-djr-text, sans-serif;
     font-style: normal;
     font-weight: 600;
+}
+
+.square-green {
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid rgb(153, 223, 160);
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+
+.square-yellow {
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid rgb(225, 215, 137);
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
 }
