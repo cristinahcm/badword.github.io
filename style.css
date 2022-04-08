@@ -57,22 +57,8 @@ a {
 }
 
   a:hover {
-    box-shadow: inset 20px 20px 20px 20px #000000;
-    color: #E9E9E8;
+    text-decoration: underline;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .background-img-2 {
     display: flex;

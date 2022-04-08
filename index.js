@@ -52,11 +52,11 @@ const words = [
     "pa romperla",
     //"pero ya no",
     //"quien tu eres",
-    "que pretendes",
+    //"que pretendes",
     "rlndt",
     "ronca freestyle",
     "safaera",
-    "sexto sentido",
+    //"sexto sentido",
     //"si ella sale",
     //"si estuviesemos juntos",
     //"si veo a tu mamá",
@@ -225,16 +225,13 @@ function submit() {
         alert ("Congratulations!")
         startContainer.classList.remove("hidden");
         gameContainer.classList.add("hidden");
-        currentTile = 0
-        currentWord = " "
+        
     }
 
     if (row === 5) {
        alert ("Game over :(")
        startContainer.classList.remove("hidden");
-       gameContainer.classList.add("hidden");
-       currentTile = 0
-       currentWord = ""
+       gameContainer.classList.add("hidden");   
     }
     row++
     currentTile = 0
