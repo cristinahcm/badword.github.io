@@ -52,7 +52,6 @@ const words = [
     "pa ti",
     "pa romperla",
     "pero ya no",
-    "puesto pa guerrial",
     "quien tu eres",
     "que malo",
     "que pretendes",
@@ -62,7 +61,7 @@ const words = [
     "ser bichote",
     "sexto sentido",
     "si ella sale",
-    "si estuviésemos juntos",
+    "si estuviesemos juntos",
     "si veo a tu mamá",
     "solo de mi",
     "sorry papi",
@@ -100,13 +99,13 @@ console.log(randomWord)
 // cojo el botón de start y la primera pantalla
 const startButton = document.getElementById('start-game-button');
 const startContainer = document.getElementById('start-container');
+const gameContainer = document.getElementById('game-container');
 // le creo el evento de click al botón de start
 startButton.addEventListener("click", startGame);
 
 
 // cuando le doy al botón empieza esta función
 function startGame() {
-    const gameContainer = document.getElementById('game-container');
     const board = document.getElementById('board-container')
     const keyboard = document.getElementById('keyboard-container')//al haber dos pantallas diferentes, primero oculto la primera y muestro la segunda con hidden
     startContainer.classList.add("hidden");
@@ -228,13 +227,19 @@ function submit() {
         
     }
     if (randomWord === currentWord) {
-        alert = ("You won!")
-        return
+        alert ("Congratulations!")
+        startContainer.classList.remove("hidden");
+        gameContainer.classList.add("hidden");
+        currentTile = 0
+        currentWord = " "
     }
 
     if (row === 5) {
        alert ("Game over :(")
-        return
+       startContainer.classList.remove("hidden");
+       gameContainer.classList.add("hidden");
+       currentTile = 0
+       currentWord = ""
     }
     row++
     currentTile = 0

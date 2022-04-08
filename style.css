@@ -13,14 +13,26 @@
     margin-top: 8px;
 }
 
+.spotify {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
 .start-game {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 #start-game-button {
+    border: none;
+}
+
+#playlist {
     border: none;
 }
 
@@ -30,16 +42,43 @@
     justify-content: center;
     margin-top: 20px;
     font-family: forma-djr-text, sans-serif;
+    color: black;
     font-style: normal;
     font-weight: 600;
 }
+
+a {
+    font-family: forma-djr-text, sans-serif;
+    color: black;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+  a:hover {
+    box-shadow: inset 20px 20px 20px 20px #000000;
+    color: #E9E9E8;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .background-img-2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 100px;
-    margin-top: 20px;
 }
 
 .hidden {
@@ -47,8 +86,8 @@
 }
 
 #board-container .square {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border: 1.5px solid black;
     border-radius: 3px;
     box-sizing: border-box;
@@ -114,9 +153,9 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.2em;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
@@ -124,16 +163,16 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 2px;
     font-family: forma-djr-text, sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .square-green {
-    width: 40px;
-    height: 40px;
-    border: 1.5px solid rgb(153, 223, 160);
+    width: 35px;
+    height: 35px;
+    background-color: rgb(153, 223, 160);
     border-radius: 3px;
     box-sizing: border-box;
     display: flex;
@@ -143,9 +182,9 @@ p {
 }
 
 .square-yellow {
-    width: 40px;
-    height: 40px;
-    border: 1.5px solid rgb(225, 215, 137);
+    width: 35px;
+    height: 35px;
+    background-color: rgb(225, 215, 137);
     border-radius: 3px;
     box-sizing: border-box;
     display: flex;
