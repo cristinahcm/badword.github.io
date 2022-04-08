@@ -94,7 +94,7 @@ let currentWord = ""
 // creo la canción random
 const randomWord = words[Math.floor(Math.random() * words.length)];
 // esto luego hay que ocultarlo para que no le salga al usuario
-console.log(randomWord)
+//console.log(randomWord)
 
 // cojo el botón de start y la primera pantalla
 const startButton = document.getElementById('start-game-button');
@@ -156,7 +156,7 @@ document.addEventListener('keydown', (e) => {
         const firstSquare = document.getElementById(`square${currentTile}-${row}`)
         firstSquare.innerHTML = e.key.toUpperCase()
         currentWord += e.key
-        console.log(currentWord)
+        //console.log(currentWord)
         currentTile++;
     } 
 })
@@ -194,7 +194,7 @@ document.getElementById("keyboard-container").addEventListener("click", (e) => {
         const firstSquare = document.getElementById(`square${currentTile}-${row}`)
         firstSquare.innerHTML = key.toUpperCase()
         currentWord += key
-        console.log(currentWord)
+        //console.log(currentWord)
         currentTile++;
     }
 })
