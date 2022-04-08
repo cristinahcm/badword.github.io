@@ -3,44 +3,28 @@ const words = [
     "ahora me llama",
     "am",
     "amorfoda",
-    "bailame",
-    "bellacoso",
     "bendiciones",
     "bichiyal",
-    "blockia",
     "booker t",
     "bye me fui",
-    "caile",
     "callaita",
     "cancion con yandel",
-    "cantares de navidad",
-    "caro",
     "chambea",
-    "como antes",
-    "como se siente",
-    "como soy",
-    "como un bebe",
-    "compositor del año",
-    "contigo",
     "cual es tu plan",
     "cuando perriabas",
     "cuidao por ahi",
     "dakiti",
     "de museo",
-    "desde el corazon",
     "diabla",
     "diles",
     "dime si te acuerdas",
-    "dime si vas a volver",
     "el mundo es mio",
     "en casita",
     "esta cabron ser yo",
-    "esta rico",
     "estamos arriba",
     "estamos bien",
     "explicale",
     "hablamos mañana",
-    "hasta que dios diga",
     "haciendo que me amas",
     "hoy cobre",
     "ignorantes",
@@ -51,32 +35,23 @@ const words = [
     "la noche de anoche",
     "la romana",
     "la santa",
-    "la ultima vez",
     "la zona",
-    "lean",
     "lo siento bb",
-    "madura",
     "maldita pobreza",
     "mas de una cita",
-    "me importa un carajo",
-    "me llamas",
     "me llueven",
     "me mata",
     "mia",
     "mojaita",
     "netflixxx",
     "ni bien ni mal",
-    "no te dejaste querer",
     "no te hagas",
     "odio",
-    "original",
     "otra noche en miami",
-    "otra ve",
     "p fkn r",
     "pa ti",
     "pa romperla",
     "pero ya no",
-    "polaroid",
     "puesto pa guerrial",
     "quien tu eres",
     "que malo",
@@ -84,30 +59,21 @@ const words = [
     "rlndt",
     "ronca freestyle",
     "safaera",
-    "se fue conmigo",
-    "sensualidad",
     "ser bichote",
     "sexto sentido",
     "si ella sale",
     "si estuviésemos juntos",
-    "si tu lo dejas",
     "si veo a tu mamá",
-    "solita",
     "solo de mi",
-    "soltera",
     "sorry papi",
     "soy peor",
-    "subimos de rango",
     "te bote",
     "te deseo lo mejor",
     "te mudaste",
     "tenemos que hablar",
     "trellas",
-    "trepate",
-    "triste",
     "tu no metes cabra",
     "tu no vive asi",
-    "un dia",
     "un peso",
     "una vez",
     "vete",
@@ -149,7 +115,7 @@ function startGame() {
     // creamos la zona de los cuadrados 
 
     const wordLength = randomWord.length;
-    for (let i = 4; i >= 0; i--) {
+    for (let i = 5; i >= 0; i--) {
         const row = document.createElement("div")
         row.className = "row"
         for (let j = 0; j < wordLength; j++) {
@@ -189,7 +155,7 @@ document.addEventListener('keydown', (e) => {
             currentWord += ' '
         }
         const firstSquare = document.getElementById(`square${currentTile}-${row}`)
-        firstSquare.innerHTML = e.key
+        firstSquare.innerHTML = e.key.toUpperCase()
         currentWord += e.key
         console.log(currentWord)
         currentTile++;
@@ -198,7 +164,7 @@ document.addEventListener('keydown', (e) => {
 
 
 
-// escribir con el teclado de abajo
+// escribir con el teclado de la pantalla
 
 document.getElementById("keyboard-container").addEventListener("click", (e) => {
     const target = e.target
@@ -227,7 +193,7 @@ document.getElementById("keyboard-container").addEventListener("click", (e) => {
             currentWord += ' '
         }
         const firstSquare = document.getElementById(`square${currentTile}-${row}`)
-        firstSquare.innerHTML = key
+        firstSquare.innerHTML = key.toUpperCase()
         currentWord += key
         console.log(currentWord)
         currentTile++;
@@ -262,12 +228,12 @@ function submit() {
         
     }
     if (randomWord === currentWord) {
-        alert ("Has ganao ole")
+        alert = ("You won!")
         return
     }
 
-    if (row === 4) {
-       alert ("has perdido :(")
+    if (row === 5) {
+       alert ("Game over :(")
         return
     }
     row++
