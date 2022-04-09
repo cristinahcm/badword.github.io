@@ -1,5 +1,5 @@
 // declaro la variable de las palabras
-const words = [
+//const words = [
     //"ahora me llama",
     "am",
     "amorfoda",
@@ -79,6 +79,15 @@ const words = [
     "yo perreo sola",
     "yo visto asi",
     "yonaguni"
+//];
+
+// declaro la variable de las palabras
+const words = [
+    "lo siento bb",
+    "soy peor",
+    "volvi",
+    "vuelve",
+    "yonaguni"
 ];
 
 let row = 0;
@@ -112,7 +121,7 @@ function startGame() {
 
     const wordLength = randomWord.length;
     for (let i = 5; i >= 0; i--) {
-        allRows  = document.createElement("div")
+        allRows = document.createElement("div")
 
         allRows.className = "row"
         for (let j = 0; j < wordLength; j++) {
@@ -144,7 +153,7 @@ document.addEventListener('keydown', (e) => {
         submit()
     }
     else if (keypress == ' ') {
-        return 
+        return
     }
     else if (keypress) {
         if (randomWord[currentTile] === ' ') {
@@ -156,7 +165,7 @@ document.addEventListener('keydown', (e) => {
         currentWord += e.key
         //console.log(currentWord)
         currentTile++;
-    } 
+    }
 })
 
 
@@ -181,11 +190,11 @@ document.getElementById("keyboard-container").addEventListener("click", (e) => {
     }
 
     else if (key == ' ') {
-        return 
+        return
     }
 
     else if (key) {
-        if(randomWord[currentTile] === ' '){
+        if (randomWord[currentTile] === ' ') {
             currentTile++
             currentWord += ' '
         }
@@ -211,9 +220,9 @@ function deleteLetter() {
 //submit word
 function submit() {
     if (currentTile !== randomWord.length) {
-    return
-    
-}
+        return
+
+    }
     for (let i = 0; i < randomWord.length; i++) {
         const letter = document.getElementById(`square${i}-${row}`)
         const isSpace = (letter.innerHTML === "")
@@ -221,31 +230,31 @@ function submit() {
             letter.className = "square-green"
         } else if (randomWord.includes(currentWord[i]) && !isSpace) {
             letter.className = "square-yellow"
-        } 
-        
+        }
+
     }
     if (randomWord === currentWord) {
-        alert ("Congratulations!")
+        alert("Congratulations!")
         restart()
     }
 
     if (row === 5) {
-       alert ("Game over :(")
-       restart()
+        alert("Game over :(")
+        restart()
     }
-    
+
     row++
     currentTile = 0
     currentWord = ""
 
 }
 
-function restart () {
+function restart() {
     startContainer.classList.remove("hidden");
-    gameContainer.classList.add("hidden");let board = document.getElementById("board-container");
+    gameContainer.classList.add("hidden"); let board = document.getElementById("board-container");
     let rows = document.querySelectorAll(".row")
-    rows.forEach (row => {
-    board.removeChild(row)
+    rows.forEach(row => {
+        board.removeChild(row)
     })
     row = -1;
     randomWord = words[Math.floor(Math.random() * words.length)];
