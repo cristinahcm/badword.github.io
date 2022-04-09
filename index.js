@@ -91,7 +91,7 @@ let allRows;
 // creo la canción random
 let randomWord = words[Math.floor(Math.random() * words.length)];
 // esto luego hay que ocultarlo para que no le salga al usuario
-console.log(randomWord)
+//console.log(randomWord)
 
 // cojo el botón de start y la primera pantalla
 const startButton = document.getElementById('start-game-button');
@@ -226,32 +226,27 @@ function submit() {
     }
     if (randomWord === currentWord) {
         alert ("Congratulations!")
-        startContainer.classList.remove("hidden");
-        gameContainer.classList.add("hidden");
-        let board = document.getElementById("board-container");
-        let rows = document.querySelectorAll(".row")
-        rows.forEach (row => {
-        board.removeChild(row)
-        })
-        row = -1;
-        randomWord = words[Math.floor(Math.random() * words.length)];
+        restart()
     }
 
     if (row === 5) {
        alert ("Game over :(")
-       startContainer.classList.remove("hidden");
-       gameContainer.classList.add("hidden"); 
-       let board = document.getElementById("board-container");
-        let rows = document.querySelectorAll(".row")
-        rows.forEach (row => {
-        board.removeChild(row)
-        })
-        row = -1;
-        randomWord = words[Math.floor(Math.random() * words.length)];
+       restart()
     }
+    
     row++
     currentTile = 0
     currentWord = ""
-    console.log(allRows)
 
+}
+
+function restart () {
+    startContainer.classList.remove("hidden");
+    gameContainer.classList.add("hidden");let board = document.getElementById("board-container");
+    let rows = document.querySelectorAll(".row")
+    rows.forEach (row => {
+    board.removeChild(row)
+    })
+    row = -1;
+    randomWord = words[Math.floor(Math.random() * words.length)];
 }
