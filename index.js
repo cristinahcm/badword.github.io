@@ -85,11 +85,13 @@ let row = 0;
 let currentTile = 0;
 let isGameOver = false
 let currentWord = ""
+let allRows;
+
 
 // creo la canción random
-const randomWord = words[Math.floor(Math.random() * words.length)];
+let randomWord = words[Math.floor(Math.random() * words.length)];
 // esto luego hay que ocultarlo para que no le salga al usuario
-//console.log(randomWord)
+console.log(randomWord)
 
 // cojo el botón de start y la primera pantalla
 const startButton = document.getElementById('start-game-button');
@@ -110,8 +112,9 @@ function startGame() {
 
     const wordLength = randomWord.length;
     for (let i = 5; i >= 0; i--) {
-        const row = document.createElement("div")
-        row.className = "row"
+        allRows  = document.createElement("div")
+
+        allRows.className = "row"
         for (let j = 0; j < wordLength; j++) {
             const square = document.createElement("div")
             if (randomWord[j] === ' ') {
@@ -120,9 +123,9 @@ function startGame() {
                 square.className = "square"
             }
             square.id = `square${j}-${i}`
-            row.appendChild(square)
+            allRows.appendChild(square)
         }
-        board.prepend(row)
+        board.prepend(allRows)
     }
 }
 
@@ -225,16 +228,30 @@ function submit() {
         alert ("Congratulations!")
         startContainer.classList.remove("hidden");
         gameContainer.classList.add("hidden");
-        
+        let board = document.getElementById("board-container");
+        let rows = document.querySelectorAll(".row")
+        rows.forEach (row => {
+        board.removeChild(row)
+        })
+        row = -1;
+        randomWord = words[Math.floor(Math.random() * words.length)];
     }
 
     if (row === 5) {
        alert ("Game over :(")
        startContainer.classList.remove("hidden");
-       gameContainer.classList.add("hidden");   
+       gameContainer.classList.add("hidden"); 
+       let board = document.getElementById("board-container");
+        let rows = document.querySelectorAll(".row")
+        rows.forEach (row => {
+        board.removeChild(row)
+        })
+        row = -1;
+        randomWord = words[Math.floor(Math.random() * words.length)];
     }
     row++
     currentTile = 0
     currentWord = ""
+    console.log(allRows)
 
 }
