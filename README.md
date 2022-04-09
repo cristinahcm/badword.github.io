@@ -1,7 +1,9 @@
 # badword.github.io
 
 Badword
+
 Description
+
 We all know wordle, a game where you have to guess a random word with 5 letters. Badword is a similar one, but instead of having 5 letters and a normal word, you will have to guess a random Bad Bunny's song. The game ends when you dont guess the word or if you guess it.
 
 MVP
@@ -39,8 +41,5 @@ style it on grey and if its there style it on green
 
 style the end screen
 
-Git
-URls for the project repo and deploy Link Repo Link Deploy
-
-Slides
-URls for the project presentation (slides) Link Slides.com
+Game
+https://cristinahcm.github.io/badword.github.io/
